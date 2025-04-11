@@ -1,0 +1,8 @@
+# Environment variables
+.env
+.venv
+env/
+venv/
+
+# Data files
+*.csv
