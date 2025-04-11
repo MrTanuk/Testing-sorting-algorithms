@@ -1,12 +1,12 @@
-### Inventory Management - CarFix
+# Inventory Management - CarFix
 
-### Problem 
+## Problem 
 Mechanical workshops in Venezuela face critical challenges in the management of spare parts:  
 - Disorganized inventories with hundreds of parts.  
 - Difficulty prioritizing items by price, stock or demand  
 - Inefficient search times that affect customer service.  
 
-### Objective  
+## Objective  
 Develop a system that allows:  
 1. Sort spare parts by key criteria (price, stock, name) 2.  
 2. Optimize inventory and replenishment management  
@@ -39,7 +39,7 @@ python generate_csv.py
 python main.py
 ```
 
-### System Description  
+## System Description  
 **Spare Parts Data:**
 - Unique ID  
 - Part Name  
@@ -62,7 +62,7 @@ By Compatibility | BubbleSort | Group parts by vehicle brand |
 - All algorithms are tested on the same extended dataset.
 - The run time for each algorithm is displayed.
 
-### Benefits  
+## Benefits  
 **For the Shop Floor:**
 - 60% reduction in search times  
 - Intelligent inventory organization  
@@ -75,7 +75,7 @@ By Compatibility | BubbleSort | Group parts by vehicle brand |
 - Transparency in parts availability  
 - Competitive pricing through efficient management  
 
-### Tools Used  
+## Tools Used  
 - Python 3.10+  
 - Rich library for interactive tables (CLI)  
 - CSV for data management  
