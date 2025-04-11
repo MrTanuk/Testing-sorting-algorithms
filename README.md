@@ -12,6 +12,33 @@ Develop a system that allows:
 2. Optimize inventory and replenishment management  
 3. Compare the performance of algorithms for informed decision making.  
 
+## Installation
+
+1. Clone the repository
+
+```bash
+git clone git@github.com:MrTanuk/Testing-sorting-algorithms.git
+cd Testing-sorting-algorithms
+```
+
+2. Install the dependencies
+
+```bash
+pip install numpy rich
+```
+
+3. Generate CSV File (if not already present):
+
+```bash
+python generate_csv.py
+```
+
+4. Run the program
+
+```bash
+python main.py
+```
+
 ### System Description  
 **Spare Parts Data:**
 - Unique ID  
