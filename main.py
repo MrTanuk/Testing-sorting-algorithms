@@ -129,6 +129,19 @@ def showPerformanceChart(algorithms, times):
         console.print(f"{algo.ljust(14)} {'█' * barLength} ({t:.5f}s)")
     print("")
 
+def bubbleSort(arr):
+    """for compatibility (by vehicle brand)"""
+    n = len(arr)
+    for i in range(n):
+        for j in range(0, n-i-1):
+            # Extract vehicle make (1st word)
+            brand1 = arr[j].getCompatibility().split()[0]
+            brand2 = arr[j+1].getCompatibility().split()[0]
+            
+            if brand1 > brand2:
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+    return arr
+
 # Main Application
 def mainMenu():
     """Main application menu"""
@@ -139,8 +152,9 @@ def mainMenu():
         console.print("1. Ordenar por precio (QuickSort)")
         console.print("2. Ordenar por stock (InsertionSort)")
         console.print("3. Ordenar por nombre (MergeSort)")
-        console.print("4. Comparar rendimiento")
-        console.print("5. Salir")
+        console.print("4. Ordenar por compatibilidad (BubbleSort)")
+        console.print("5. Comparar rendimiento")
+        console.print("6. Salir")
         option = input("\nSeleccione una opción: ")
         
         if option == "1":
@@ -156,8 +170,12 @@ def mainMenu():
             showTable("Repuestos ordenados alfabéticamente", sortedParts)
 
         elif option == "4":
-            # Performance comparison with 5000 items
-            largeData = spareParts * 10
+            sortedParts = bubbleSort(spareParts.copy())
+            showTable("Repuestos ordenados por compatibilidad (marca)", sortedParts)
+
+        elif option == "5":
+            # Performance comparison with 2500 items
+            largeData = spareParts * 5
             start = time.time()
             quickSort(largeData.copy())
             qsTime = time.time() - start
@@ -169,12 +187,16 @@ def mainMenu():
             start = time.time()
             insertionSort(largeData.copy())
             insTime = time.time() - start
+
+            start = time.time()
+            bubbleSort(largeData.copy())
+            bsTime = time.time() - start
             
             showPerformanceChart(
-                ["QuickSort", "MergeSort", "InsertionSort"],
-                [qsTime, msTime, insTime]
+                ["QuickSort", "MergeSort", "InsertionSort", "BubbleSort"],
+                [qsTime, msTime, insTime, bsTime]
             )
-        elif option == "5":
+        elif option == "6":
             break
 
 if __name__ == "__main__":
